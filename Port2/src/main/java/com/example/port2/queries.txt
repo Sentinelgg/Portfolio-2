@@ -1,0 +1,63 @@
+drop table if exists signup;
+drop table if exists course;
+drop table if exists student;
+create table if not exists student(
+                                      name text primary key
+);
+
+create table if not exists course(
+                                     name text primary key,
+                                     ects integer
+);
+
+create table if not exists signup(
+                                     stud text references student(name),
+                                     course text references course(name)
+);
+
+
+insert into course values( 'BK1 Empirical Data',5);
+insert into course values( 'BK2 Experimental Methods',5);
+insert into course values( 'BK3 Theory of Natural Science',5);
+insert into course values( 'Logic and Discrete Mathematics',5);
+insert into course values( 'Functional Biology – Zoology',5);
+insert into course values( 'Linear Algebra',5);
+insert into course values( 'Organic Chemistry',5);
+insert into course values( 'Biological Chemistry',5);
+insert into course values( 'Statistical Models',5);
+insert into course values( 'Functional Programming and Language Implementations',5);
+insert into course values( 'Classical Mechanics',5);
+insert into course values( 'Environmental Science',5);
+insert into course values( 'Cell Biology',5);
+insert into course values( 'Functional biology – Botany',5);
+insert into course values( 'Supplementary Physics',5);
+insert into course values( 'Calculus',5);
+insert into course values( 'The Chemical Reaction',5);
+insert into course values( 'Scientific Computing',5);
+insert into course values( 'Energy and Climate Changes',5);
+insert into course values( 'Design og Konstruktion I+Workshop',5);
+insert into course values( 'Subjektivitet, Teknologi og Samfund I',5);
+insert into course values( 'Teknologiske systemer og artefakter I',5);
+insert into course values( 'Videnskabsteori',5);
+insert into course values( 'Design og Konstruktion II+Workshop',5);
+insert into course values( 'Subjektivitet, Teknologi og Samfund II',5);
+insert into course values( 'Bæredygtige teknologier',5);
+insert into course values( 'Kunstig intelligens',5);
+insert into course values( 'Medier og teknologi - datavisualisering',5);
+insert into course values( 'Teknologiske Systemer og Artefakter II - Sundhedsteknologi',5);
+insert into course values( 'Den (in)humane storby',5);
+insert into course values( 'Interactive Design in the Field',5);
+insert into course values( 'Organisation og ledelse af designprocesser',5);
+insert into course values( 'Essential Computing',5);
+insert into course values( 'Software Development',10);
+insert into course values( 'Interactive Digital Systems',5);
+insert into course values( 'Organisatorisk forandring og IT',5);
+insert into course values( 'BANDIT',10);
+insert into course values( 'Web Baserede IT Systemer',5);
+insert into course values( 'Essential Astrology',5);
+insert into course values( 'Venus studies',5);
+insert into course values( 'Mars studies',5);
+insert into course values( 'Ascendant calculations',5);
+insert into course values( 'Smart Cities',5);
+insert into course values( 'AI and Communication Practices',5);
+insert into course values( 'Data Science and Visualization',5);
