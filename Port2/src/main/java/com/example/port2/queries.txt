@@ -1,6 +1,9 @@
 drop table if exists signup;
 drop table if exists course;
 drop table if exists student;
+drop table if exists electives;
+drop table if exists projects;
+drop table if exists subcourse;
 create table if not exists student(
                                       name text primary key
 );
@@ -14,7 +17,18 @@ create table if not exists signup(
                                      stud text references student(name),
                                      course text references course(name)
 );
-
+create table if not exists electives(
+                                     name text primary key,
+                                     ects integer
+);
+create table if not exists projects(
+                                     name text primary key,
+                                     ects integer
+);
+create table if not exists subcourse(
+                                     name text primary key,
+                                     ects integer
+);
 
 insert into course values( 'BK1 Empirical Data',5);
 insert into course values( 'BK2 Experimental Methods',5);
@@ -48,16 +62,16 @@ insert into course values( 'Teknologiske Systemer og Artefakter II - Sundhedstek
 insert into course values( 'Den (in)humane storby',5);
 insert into course values( 'Interactive Design in the Field',5);
 insert into course values( 'Organisation og ledelse af designprocesser',5);
-insert into course values( 'Essential Computing',5);
-insert into course values( 'Software Development',10);
-insert into course values( 'Interactive Digital Systems',5);
-insert into course values( 'Organisatorisk forandring og IT',5);
-insert into course values( 'BANDIT',10);
-insert into course values( 'Web Baserede IT Systemer',5);
-insert into course values( 'Essential Astrology',5);
-insert into course values( 'Venus studies',5);
-insert into course values( 'Mars studies',5);
-insert into course values( 'Ascendant calculations',5);
-insert into course values( 'Smart Cities',5);
-insert into course values( 'AI and Communication Practices',5);
-insert into course values( 'Data Science and Visualization',5);
+insert into subcourse values( 'Essential Computing',5);
+insert into subcourse values( 'Software Development',10);
+insert into subcourse values( 'Interactive Digital Systems',5);
+insert into subcourse values( 'Organisatorisk forandring og IT',5);
+insert into subcourse values( 'BANDIT',10);
+insert into subcourse values( 'Web Baserede IT Systemer',5);
+insert into subcourse values( 'Essential Astrology',5);
+insert into subcourse values( 'Venus studies',5);
+insert into subcourse values( 'Mars studies',5);
+insert into subcourse values( 'Ascendant calculations',5);
+insert into electives values( 'Smart Cities',5);
+insert into electives values( 'AI and Communication Practices',5);
+insert into electives values( 'Data Science and Visualization',5);
